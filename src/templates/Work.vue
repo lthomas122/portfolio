@@ -2,7 +2,11 @@
     <Layout>
         <div class="post__container" :value="$page.post.title">
             <div v-html="$page.post.content" class="post__body" />
+            <div class="back-to-listing">
+                <g-link to="/work">Go back to listing page</g-link>
+            </div>
         </div>
+
     </Layout>
 </template>
 
@@ -38,6 +42,11 @@ div.post__container {
     padding-bottom: 100px;
     p {
         line-height: 1.6;
+        
+        code {
+            font-size: 96%;
+            background: #fff;
+        }
     }
     a {
         &::before, &::after {

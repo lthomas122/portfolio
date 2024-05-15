@@ -67,5 +67,5 @@ Graphcore's tired, old product page layouts needed a redesign for the new genera
 <figcaption><em>The POD256 product page. You can find the product pages <a href="https://www.graphcore.ai/products">here</a></em></figcaption>
 </figure>
 
-### Creative Medium Post
+### Further Reading
 I wrote an article on Medium that explores more of the processes and art direction of this launch. Please feel free to read it at you own leisure. You can find the article [here](https://medium.com/@liamdanielthomas/the-wow-factor-how-we-designed-graphcores-bow-launch-891a24259516).
