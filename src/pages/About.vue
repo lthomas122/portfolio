@@ -8,7 +8,7 @@
         <p>After a long career in the private sector, I'm looking for new challenges in organisations and institutions I truly believe in, and hope to use my skills and experience to help their causes. </p>
       </div>
       <g-image src="~/assets/me.jpg" alt="A picture of me" width="800" class="portrait"/>
-      </div>
+    </div>
   </Layout>
 </template>
 

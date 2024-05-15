@@ -59,7 +59,7 @@ $purple: #c80473;
   justify-content: space-evenly;
   padding-top: 80px;
   .index__nav {
-    flex: 0 0 15%;
+    flex: 0 0 17%;
     height:auto;
     background: $yellow;
     aspect-ratio: 1 / 1 ;
@@ -85,16 +85,17 @@ $purple: #c80473;
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
+        padding-left: 20px;
         transition: all 1s ease;
       }
       &::before, .index-link::before {
         content:'';
         position: absolute;
-        top: -20%;
+        top: 10%;
         left: -25%;
         background: $black;
         display: table;
-        padding-top: 140%;
+        padding-top: 80%;
         width: 40%;
         z-index: -1;
         transition: 1s ease;
@@ -109,6 +110,8 @@ $purple: #c80473;
 
         h3 {
           background-position: 0% 50%;
+          padding-right: 20px;
+          padding-left: 0;
         }
       }
     }
@@ -128,7 +131,7 @@ $purple: #c80473;
         height: 40%;
         width: 140%;
         z-index: -1;
-        transition: 1s ease;
+        transition: top 1s ease, height 1s ease 0s;
       }
       .index-link::before {
           background: $purple;
@@ -136,6 +139,8 @@ $purple: #c80473;
       &:hover {
         &::before, .index-link::before {
           top: -25%;
+          height: 150%;
+          transition: top 1s ease, height .8s ease 1s;
         }
       }
     }
@@ -150,16 +155,17 @@ $purple: #c80473;
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
+        padding-right: 20px;
         transition: all 1s ease;
       }
       &::before, .index-link::before {
         content:'';
         position: absolute;
-        top: -20%;
+        top: 10%;
         right: -25%;
         background: $black;
         display: table;
-        padding-top: 140%;
+        padding-top: 80%;
         width: 40%;
         z-index: -1;
         transition: 1s ease;
@@ -173,6 +179,8 @@ $purple: #c80473;
         }
         h3 {
           background-position: 100% 50%;
+          padding-left: 20px;
+          padding-right: 0;
         }
       }
     }

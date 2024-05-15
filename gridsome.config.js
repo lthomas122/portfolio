@@ -19,7 +19,41 @@ function addStyleResource (rule) {
 
 module.exports = {
   siteName: 'Gridsome',
-  plugins: [],
+  plugins: [
+   {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "./content/**/*.md",
+        typeName: "Work", // for the sake of naming GraphQL - template missing
+        refs: {
+          categories: {
+            typeName: 'Category',
+            create: true,
+          }
+        },
+        remark: {
+          externalLinksTarget: '_blank',
+          externalLinksRel: ['noopener', 'noreferrer'],
+        },
+      },
+    },
+    // {
+    //   use: "@gridsome/source-filesystem",
+    //   options: {
+    //     baseDir: './content/projects/',
+    //     path: "*.md",
+    //     typeName: "Projects", // for the sake of naming GraphQL - template missing
+    //     remark: {
+    //       externalLinksTarget: '_blank',
+    //       externalLinksRel: ['noopener', 'noreferrer'],
+    //     },
+    //   },
+    // },
+  ],
+  // templates: {
+  //   Work: '/work/:title',
+  //   // Projects: '/projects/:title'
+  // }
   // chainWebpack (config) {
   //   // Load variables for all vue-files
   //   const types = ['vue-modules', 'vue', 'normal-modules', 'normal']

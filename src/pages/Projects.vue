@@ -1,46 +1,113 @@
 <template>
   <Layout>
-
-    <div class="hero-container">
-      <g-image alt="Liam Thomas" src="~/assets/logo.svg" width="1000" class="center" style="margin-block:2rem;" />
-
-      <p class="text-center text-large">
-        Creative Director & Technologist
-      </p>
+    <div class="container">
+      <h1>Projects</h1>
+      <div class="max-600">
+        This is a sort of dumping ground for all my current projects. They're mostly works in progress, but they detail my explorations into different fields and areas of knowledge, like electronic engineering, music, installations, 3D/CAD design and so on. Some are big, some are small. They're all worked on in my spare time and as such a few of these proejcts are on hiatus until I can get funding or extra pairs of hands to help out.
+      </div>
+      <div v-for="post in $page.recentPosts.edges" :key="post.node.title">
+            <div class="project-list-item">
+              <g-link :to="post.node.path">{{ post.node.title }}</g-link>
+            </div>
+      </div>
     </div>
-    <div class="max-600">
-      <h3>About Me</h3>
-      <p>Hello, I'm Liam. A multi-disciplinary creative director and technologist. Currently, I work as Head of Creative for an AI tech startup called Graphcore, with previous experience in an array of fields from radio and podcasting to fashion and e-commerce. </p>
-      <p>My background in visual design, creative direction, programming and team leadership have fostered my mindful approach and swift creative problem-solving.</p>
-      <p>Aside from my passions for creativity and music, I have a thirst for knowledge. I would say learning is my one true love. My self-starter attitude has enabled me to constantly learn a wide range of new skills in my spare time, that has not only given me a varied toolkit at my disposal, but a unique and comprehensive perspective when envisioning projects.</p>
-      <p>After a long career in the private sector, I'm looking for new challenges in organisations and institutions I truly believe in, and hope to use my skills and experience to help their causes. </p>
-      <p class="home-links">
-        <a href="https://gridsome.org/docs/" target="_blank" rel="noopener" value="Gridsome Docs">Gridsome Docs</a>
-        <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener" value="GitHub">GitHub</a>
-      </p>
-    </div>
-
   </Layout> 
 </template>
+
+<page-query>
+query Posts {
+  recentPosts: allWork (filter: { category: { eq: "projects" }}) {
+    edges {
+      node {
+        title
+        summary
+        path
+      }
+    }
+  }
+}
+</page-query>
 
 <script>
 export default {
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'Projects'
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.home-links a {
-  margin-right: 1rem;
+h1 {
+  max-width: 100%;
+  width: 780px;
+  margin-left: -46px;
+  padding: 23px 40px 0;
+  margin-bottom: 3rem;
+  color: #f7f9f6;
+  overflow:hidden;
+  position: relative;
+  z-index: 1;
 }
-.hero-container {
-  background: radial-gradient(#f7f9f6, transparent);
-  padding-block: 150px;
-  img {
-    max-width: 100%;
-    width: 800px;
-  }
+h1::before, h1::after {
+  content: '';
+  background: #f7f9f6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+h1::before {
+  background: #c80473;
+  z-index:-2;
+}
+h1::after {
+  animation: BGslide 1s forwards ease .2s;
+  z-index: -1;
+}
+.container {
+  position: relative;
+  padding-top: 20px;
+}
+.container::before {
+    content: "Projects";
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    background: #fef956;
+    z-index: -1;
+    transform: translateX(-100px);
+    animation: slideOut 1s forwards ease 0.2s;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    color: #c80473;
+    padding: 38px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    font-family: 'Khula', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 5px;
+    line-height: 1;
+}
+@keyframes slideOut {
+    from {
+        transform: translateX(-100px);
+    }
+
+    to {
+        transform: translateX(0px)
+    }
+}
+@keyframes BGslide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
 }
 </style>
