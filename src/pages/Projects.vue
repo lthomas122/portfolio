@@ -3,7 +3,7 @@
     <div class="container">
       <h1>Projects</h1>
       <div class="max-600">
-        This is a sort of dumping ground for all my current projects. They're mostly works in progress, but they detail my explorations into different fields and areas of knowledge, like electronic engineering, music, installations, 3D/CAD design and so on. Some are big, some are small. They're all worked on in my spare time and as such a few of these proejcts are on hiatus until I can get funding or extra pairs of hands to help out.
+        This is a sort of dumping ground for all my current projects. They're mostly works in progress, but they detail my explorations into different fields and areas of knowledge, like electronic engineering, music, installations, 3D/CAD design and so on. Some are big, some are small. They're all worked on in my spare time and as such a few of these projects are on hiatus until I can get funding or extra pairs of hands to help out.<br><strong>Note: This section is a work in progress and is yet to be populated.</strong>
       </div>
       <div v-for="post in $page.recentPosts.edges" :key="post.node.title">
             <div class="project-list-item">
